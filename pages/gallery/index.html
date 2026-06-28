@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Museum | Gallery</title>
+    <meta name="theme-color" content="#F7F4F1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="gallery-page">
+      <header class="topbar">
+        <a
+          class="back-btn"
+          href="../lobby/index.html"
+          aria-label="Kembali ke lobby"
+        >
+          ←
+        </a>
+
+        <div class="topbar-copy">
+          <p class="eyebrow">OUR MUSEUM</p>
+          <h1>Gallery Room</h1>
+        </div>
+
+        <button class="icon-btn" type="button" aria-label="Search gallery">
+          ⌕
+        </button>
+      </header>
+
+      <section class="hero-card">
+        <div class="hero-copy">
+          <span class="hero-kicker">Collection of memories</span>
+          <h2>Setiap foto punya cerita.</h2>
+          <p>
+            Ruang untuk menyimpan, melihat ulang, dan membuka kembali momen yang
+            pernah kalian jalani bersama.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-btn" href="./upload/index.html"> + Add Memory </a>
+            <button class="ghost-btn" type="button">Sort by newest</button>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-frame frame-a">
+            <div class="art-photo mono"></div>
+          </div>
+          <div class="art-frame frame-b">
+            <div class="art-photo pastel"></div>
+          </div>
+          <div class="art-frame frame-c">
+            <div class="art-photo warm"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">FILTER</p>
+            <h3>Pick a view</h3>
+          </div>
+          <span class="tiny-note">124 memories</span>
+        </div>
+
+        <div class="chip-row" role="tablist" aria-label="Gallery filters">
+          <button class="chip active" data-filter="all" type="button">
+            All
+          </button>
+          <button class="chip" data-filter="albums" type="button">
+            Albums
+          </button>
+          <button class="chip" data-filter="moments" type="button">
+            Moments
+          </button>
+          <button class="chip" data-filter="polaroid" type="button">
+            Polaroid
+          </button>
+          <button class="chip" data-filter="map" type="button">Map</button>
+        </div>
+      </section>
+
+      <section class="feature-grid">
+        <article class="feature-card wide">
+          <div class="card-head">
+            <div>
+              <p class="section-kicker">FEATURED</p>
+              <h3>Today Memory</h3>
+            </div>
+            <span class="badge">1Y AGO</span>
+          </div>
+
+          <div class="featured-photo">
+            <div class="featured-thumb thumb-sunset"></div>
+            <div class="featured-thumb thumb-coffee"></div>
+            <div class="featured-thumb thumb-river"></div>
+          </div>
+
+          <div class="story-box">
+            <h4>Sunset at the bridge</h4>
+            <p>
+              Momen sore yang sederhana, tapi entah kenapa selalu terasa seperti
+              pameran kecil yang ingin dibuka lagi.
+            </p>
+            <div class="meta-row">
+              <span>📍 Jababeka</span>
+              <span>•</span>
+              <span>12 Mei 2026</span>
+              <span>•</span>
+              <span>❤️ Romantic</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-card small">
+          <div class="card-head">
+            <div>
+              <p class="section-kicker">ALBUM</p>
+              <h3>Outings</h3>
+            </div>
+            <span class="badge soft">23</span>
+          </div>
+
+          <div class="album-cover cover-outings"></div>
+          <p class="card-caption">
+            Foto jalan-jalan, night ride, dan random stop yang jadi cerita.
+          </p>
+        </article>
+
+        <article class="feature-card small">
+          <div class="card-head">
+            <div>
+              <p class="section-kicker">ALBUM</p>
+              <h3>Sleepcall</h3>
+            </div>
+            <span class="badge soft">18</span>
+          </div>
+
+          <div class="album-cover cover-night"></div>
+          <p class="card-caption">
+            Potret malam, suara, dan obrolan yang bikin nyaman.
+          </p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">COLLECTIONS</p>
+            <h3>Recent albums</h3>
+          </div>
+          <a class="text-link" href="./album/index.html">See all</a>
+        </div>
+
+        <div class="album-list">
+          <a class="album-row" href="./album/index.html">
+            <div class="album-preview preview-purple"></div>
+            <div class="album-info">
+              <strong>Anniversary</strong>
+              <small>8 memories • 2 videos</small>
+            </div>
+            <span class="album-arrow">→</span>
+          </a>
+
+          <a class="album-row" href="./album/index.html">
+            <div class="album-preview preview-pink"></div>
+            <div class="album-info">
+              <strong>Road Night</strong>
+              <small>14 memories • 1 note</small>
+            </div>
+            <span class="album-arrow">→</span>
+          </a>
+
+          <a class="album-row" href="./album/index.html">
+            <div class="album-preview preview-mono"></div>
+            <div class="album-info">
+              <strong>Random Day</strong>
+              <small>31 memories • 4 stories</small>
+            </div>
+            <span class="album-arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">MASONRY</p>
+            <h3>Photo wall</h3>
+          </div>
+          <button class="text-link" type="button">Edit view</button>
+        </div>
+
+        <div class="masonry">
+          <a class="masonry-item tall" href="./detail/index.html">
+            <div class="masonry-thumb photo-a"></div>
+            <div class="masonry-meta">
+              <strong>First coffee</strong>
+              <small>12 May • warm</small>
+            </div>
+          </a>
+
+          <a class="masonry-item" href="./detail/index.html">
+            <div class="masonry-thumb photo-b"></div>
+            <div class="masonry-meta">
+              <strong>Mirror selfie</strong>
+              <small>06 May • soft</small>
+            </div>
+          </a>
+
+          <a class="masonry-item" href="./detail/index.html">
+            <div class="masonry-thumb photo-c"></div>
+            <div class="masonry-meta">
+              <strong>Night ride</strong>
+              <small>04 May • dark</small>
+            </div>
+          </a>
+
+          <a class="masonry-item tall" href="./detail/index.html">
+            <div class="masonry-thumb photo-d"></div>
+            <div class="masonry-meta">
+              <strong>Little laugh</strong>
+              <small>28 Apr • candid</small>
+            </div>
+          </a>
+
+          <a class="masonry-item" href="./detail/index.html">
+            <div class="masonry-thumb photo-e"></div>
+            <div class="masonry-meta">
+              <strong>Pink room</strong>
+              <small>21 Apr • playful</small>
+            </div>
+          </a>
+
+          <a class="masonry-item" href="./detail/index.html">
+            <div class="masonry-thumb photo-f"></div>
+            <div class="masonry-meta">
+              <strong>River side</strong>
+              <small>17 Apr • calm</small>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Bottom navigation">
+        <a class="nav-item active" href="../lobby/index.html">
+          <span>⌂</span>
+          <small>Lobby</small>
+        </a>
+        <a class="nav-item active-room" href="./index.html">
+          <span>🖼</span>
+          <small>Gallery</small>
+        </a>
+        <button class="nav-fab" type="button" aria-label="Add memory">+</button>
+        <a class="nav-item" href="../timeline/index.html">
+          <span>📅</span>
+          <small>Timeline</small>
+        </a>
+        <a class="nav-item" href="../archive/index.html">
+          <span>📝</span>
+          <small>Archive</small>
+        </a>
+      </nav>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

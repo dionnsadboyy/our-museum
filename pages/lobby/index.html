@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Museum | Hall of Memories</title>
+    <meta name="theme-color" content="#F7F4F1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="shell">
+        <header class="topbar">
+          <div class="brand">
+            <div class="brand-mark" aria-hidden="true">🏛</div>
+            <div>
+              <p class="eyebrow">PRIVATE MEMORY MUSEUM</p>
+              <h1>Hall of Memories</h1>
+            </div>
+          </div>
+
+          <button class="icon-btn" type="button" aria-label="Notifications">
+            <span>🔔</span>
+          </button>
+        </header>
+
+        <section class="hero-card">
+          <div class="hero-copy">
+            <p class="hero-label">Today Memory</p>
+            <h2>A year ago, this moment was still new.</h2>
+            <p class="hero-subtitle">
+              A curated room for your newest memory, your oldest story, and
+              everything in between.
+            </p>
+
+            <div class="hero-actions">
+              <button class="primary-btn" type="button">
+                <span>Continue Journey</span>
+                <i>→</i>
+              </button>
+              <button class="ghost-btn" type="button">Random Memory</button>
+            </div>
+          </div>
+
+          <article class="memory-preview">
+            <div class="memory-photo memory-photo-main"></div>
+            <div class="memory-photo memory-photo-secondary"></div>
+            <div class="memory-photo memory-photo-tertiary"></div>
+            <div class="memory-badge">+12</div>
+          </article>
+        </section>
+
+        <section class="story-strip">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">FEATURED MOMENTS</p>
+              <h3>Recent story cards</h3>
+            </div>
+            <button class="text-btn" type="button">Lihat semua</button>
+          </div>
+
+          <div class="story-row">
+            <article class="story-card active">
+              <div class="story-avatar avatar-purple">D</div>
+              <div class="story-thumb thumb-night"></div>
+              <p>Story from Dion</p>
+            </article>
+
+            <article class="story-card">
+              <div class="story-avatar avatar-pink">C</div>
+              <div class="story-thumb thumb-road"></div>
+              <p>Story from Chelsea</p>
+            </article>
+
+            <article class="story-card">
+              <div class="story-avatar avatar-purple">D</div>
+              <div class="story-thumb thumb-leaf"></div>
+              <p>Night ride</p>
+            </article>
+
+            <article class="story-card">
+              <div class="story-avatar avatar-pink">C</div>
+              <div class="story-thumb thumb-flower"></div>
+              <p>Soft day</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="rooms-panel">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">ROOMS</p>
+              <h3>Choose a room</h3>
+            </div>
+            <button class="text-btn" type="button">Quick access</button>
+          </div>
+
+          <div class="filter-tabs" role="tablist" aria-label="Room filters">
+            <button class="tab active" data-filter="all" type="button">
+              All
+            </button>
+            <button class="tab" data-filter="gallery" type="button">
+              Gallery
+            </button>
+            <button class="tab" data-filter="timeline" type="button">
+              Timeline
+            </button>
+            <button class="tab" data-filter="archive" type="button">
+              Archive
+            </button>
+            <button class="tab" data-filter="music" type="button">Music</button>
+          </div>
+
+          <div class="room-grid">
+            <a
+              class="room-card"
+              data-room="gallery"
+              href="../gallery/index.html"
+            >
+              <span class="room-icon">🖼</span>
+              <strong>Gallery</strong>
+              <small>124 memories</small>
+            </a>
+
+            <a
+              class="room-card"
+              data-room="timeline"
+              href="../timeline/index.html"
+            >
+              <span class="room-icon">📅</span>
+              <strong>Timeline</strong>
+              <small>27 milestones</small>
+            </a>
+
+            <a
+              class="room-card"
+              data-room="archive"
+              href="../archive/index.html"
+            >
+              <span class="room-icon">📝</span>
+              <strong>Archive</strong>
+              <small>56 notes</small>
+            </a>
+
+            <a class="room-card" data-room="music" href="../music/index.html">
+              <span class="room-icon">🎵</span>
+              <strong>Music Corner</strong>
+              <small>18 songs</small>
+            </a>
+
+            <a class="room-card" data-room="map" href="../map/index.html">
+              <span class="room-icon">🗺</span>
+              <strong>Journey Map</strong>
+              <small>12 places</small>
+            </a>
+
+            <a
+              class="room-card"
+              data-room="capsule"
+              href="../capsule/index.html"
+            >
+              <span class="room-icon">⏳</span>
+              <strong>Time Capsule</strong>
+              <small>8 locked letters</small>
+            </a>
+          </div>
+        </section>
+
+        <section class="feed-panel">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">HALL FEED</p>
+              <h3>Curated memories</h3>
+            </div>
+            <button class="text-btn" type="button">Sort by newest</button>
+          </div>
+
+          <article class="feed-card">
+            <div class="feed-user">
+              <div class="feed-avatar avatar-purple">D</div>
+              <div>
+                <strong>Dion & Chelsea</strong>
+                <p>Now • Hall of Memories</p>
+              </div>
+            </div>
+
+            <div class="collage">
+              <div class="collage-big collage-one"></div>
+              <div class="collage-small collage-two"></div>
+              <div class="collage-small collage-three"></div>
+              <div class="collage-more">+20</div>
+            </div>
+
+            <p class="feed-text">
+              A random Thursday, but somehow it became a memory worth framing.
+            </p>
+
+            <div class="feed-actions">
+              <button class="reaction active" type="button">♡</button>
+              <button class="reaction" type="button">💬</button>
+              <button class="reaction" type="button">↗</button>
+              <span class="feed-note">and 372 others</span>
+            </div>
+          </article>
+
+          <article class="feed-card mini">
+            <div class="feed-user">
+              <div class="feed-avatar avatar-pink">C</div>
+              <div>
+                <strong>Chelsea wrote</strong>
+                <p>8m ago • A new note</p>
+              </div>
+            </div>
+
+            <div class="mini-map">
+              <div class="mini-map-pin"></div>
+              <div class="mini-map-pin pin-2"></div>
+              <div class="mini-map-pin pin-3"></div>
+              <div class="mini-map-label">Perth, WA</div>
+            </div>
+          </article>
+        </section>
+
+        <section class="timeline-panel">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">JOURNEY</p>
+              <h3>Recent timeline</h3>
+            </div>
+            <button class="text-btn" type="button">Open timeline</button>
+          </div>
+
+          <div class="timeline-list">
+            <article class="timeline-item">
+              <div class="timeline-date">
+                <strong>12</strong>
+                <span>Mei</span>
+              </div>
+              <div class="timeline-body">
+                <div class="timeline-thumb thumb-sunset"></div>
+                <div>
+                  <p>Sunset at the beach</p>
+                  <small>Story, photo, location</small>
+                </div>
+              </div>
+              <div class="timeline-like">♡</div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">
+                <strong>08</strong>
+                <span>Mei</span>
+              </div>
+              <div class="timeline-body">
+                <div class="timeline-thumb thumb-coffee"></div>
+                <div>
+                  <p>Morning coffee</p>
+                  <small>Note, voice, mood</small>
+                </div>
+              </div>
+              <div class="timeline-like active">▶</div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-date">
+                <strong>04</strong>
+                <span>Mei</span>
+              </div>
+              <div class="timeline-body">
+                <div class="timeline-thumb thumb-ride"></div>
+                <div>
+                  <p>Date at new cafe</p>
+                  <small>Album: Outings</small>
+                </div>
+              </div>
+              <div class="timeline-like">♡</div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Bottom navigation">
+        <a class="nav-item active" href="../lobby/index.html">
+          <span>⌂</span>
+          <small>Lobby</small>
+        </a>
+
+        <a class="nav-item" href="../gallery/index.html">
+          <span>🖼</span>
+          <small>Gallery</small>
+        </a>
+
+        <button class="nav-fab" type="button" aria-label="Add memory">+</button>
+
+        <a class="nav-item" href="../archive/index.html">
+          <span>📝</span>
+          <small>Archive</small>
+        </a>
+
+        <a class="nav-item" href="../settings/index.html">
+          <span>☰</span>
+          <small>More</small>
+        </a>
+      </nav>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

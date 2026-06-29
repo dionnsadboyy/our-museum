@@ -33,6 +33,43 @@
         "uno12.jpeg",
       ],
     },
+    {
+      id: 2,
+
+      folder: "day-date",
+
+      title: "Night Around",
+
+      subtitle: "Keliling Malam Tanpa Tujuan",
+
+      cover: "date1.jpeg",
+
+      date: "22 June 2026",
+
+      location: "Central Park Meikarta",
+
+      maps: "Central Park Meikarta, Cikarang Selatan, Bekasi",
+
+      mood: "🌃🤍",
+
+      story:
+        "berawal dari kepikiran habis pulang kerja buat keluar bentar. nggak ada rencana apa-apa, cuma pengen keliling. yang nggak gue sangka, lo malah dandan hampir dua jam, sampai nyatok segala. akhirnya kita cuma ke indomaret beli jajan, terus duduk di pinggir danau dekat jembatan central park meikarta. ngobrol random, ngelihatin air, sesederhana itu. tapi entah kenapa, malam itu rasanya nyaman banget.",
+
+      tags: ["Night Ride", "Meikarta", "Lake", "Random Talk"],
+
+      photos: [
+        "date1.jpeg",
+        "date2.jpeg",
+        "date3.jpeg",
+        "date4.jpeg",
+        "date5.jpeg",
+        "date6.jpeg",
+        "date7.jpeg",
+        "date8.jpeg",
+        "date9.jpeg",
+        "date10.jpeg",
+      ],
+    },
   ];
 
   const enrichAlbum = (album) => {

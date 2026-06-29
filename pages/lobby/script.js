@@ -40,9 +40,9 @@
   });
 
   if (primaryBtn) {
-    primaryBtn.addEventListener("click", () => {
-      const target = document.querySelector('.room-card[data-room="timeline"]');
-      if (target) target.click();
+    primaryBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.location.href = "../gallery/index.html";
     });
   }
 
@@ -53,7 +53,18 @@
       );
       const pick =
         visibleRooms[Math.floor(Math.random() * visibleRooms.length)];
-      if (pick) pick.click();
+
+      if (pick) {
+        pick.click();
+        return;
+      }
+
+      window.location.href = "../gallery/index.html";
     });
+  }
+
+  const firstRoom = document.querySelector('.room-card[data-room="visual"]');
+  if (firstRoom) {
+    firstRoom.classList.add("active");
   }
 })();

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -35,22 +35,22 @@
         <section class="hero-card">
           <div class="hero-copy">
             <p class="hero-label">Today Memory</p>
-            <h2>A year ago, this moment was still new.</h2>
+            <h2>A curated room for your newest memory, your oldest story, and everything in between.</h2>
             <p class="hero-subtitle">
-              A curated room for your newest memory, your oldest story, and
-              everything in between.
+              Setiap room dibuat ringan, rapi, dan tetap terasa seperti museum kecil
+              yang kalian rawat berdua.
             </p>
 
             <div class="hero-actions">
-              <button class="primary-btn" type="button">
+              <a class="primary-btn" href="../gallery/index.html">
                 <span>Continue Journey</span>
                 <i>→</i>
-              </button>
+              </a>
               <button class="ghost-btn" type="button">Random Memory</button>
             </div>
           </div>
 
-          <article class="memory-preview">
+          <article class="memory-preview" aria-hidden="true">
             <div class="memory-photo memory-photo-main"></div>
             <div class="memory-photo memory-photo-secondary"></div>
             <div class="memory-photo memory-photo-tertiary"></div>
@@ -71,13 +71,13 @@
             <article class="story-card active">
               <div class="story-avatar avatar-purple">D</div>
               <div class="story-thumb thumb-night"></div>
-              <p>Story from Dion</p>
+              <p>Random day</p>
             </article>
 
             <article class="story-card">
               <div class="story-avatar avatar-pink">C</div>
               <div class="story-thumb thumb-road"></div>
-              <p>Story from Chelsea</p>
+              <p>Day uno</p>
             </article>
 
             <article class="story-card">
@@ -104,72 +104,50 @@
           </div>
 
           <div class="filter-tabs" role="tablist" aria-label="Room filters">
-            <button class="tab active" data-filter="all" type="button">
-              All
-            </button>
-            <button class="tab" data-filter="gallery" type="button">
-              Gallery
-            </button>
-            <button class="tab" data-filter="timeline" type="button">
-              Timeline
-            </button>
-            <button class="tab" data-filter="archive" type="button">
-              Archive
-            </button>
-            <button class="tab" data-filter="music" type="button">Music</button>
+            <button class="tab active" data-filter="all" type="button">All</button>
+            <button class="tab" data-filter="visual" type="button">Gallery</button>
+            <button class="tab" data-filter="motion" type="button">Cinema</button>
+            <button class="tab" data-filter="dream" type="button">Future</button>
+            <button class="tab" data-filter="places" type="button">Map</button>
+            <button class="tab" data-filter="sound" type="button">Music</button>
+            <button class="tab" data-filter="insight" type="button">Stats</button>
           </div>
 
           <div class="room-grid">
-            <a
-              class="room-card"
-              data-room="gallery"
-              href="../gallery/index.html"
-            >
+            <a class="room-card" data-room="visual" href="../gallery/index.html">
               <span class="room-icon">🖼</span>
               <strong>Gallery</strong>
-              <small>124 memories</small>
+              <small>Photos & stories</small>
             </a>
 
-            <a
-              class="room-card"
-              data-room="timeline"
-              href="../timeline/index.html"
-            >
-              <span class="room-icon">📅</span>
-              <strong>Timeline</strong>
-              <small>27 milestones</small>
+            <a class="room-card" data-room="motion" href="../cinema/index.html">
+              <span class="room-icon">🎥</span>
+              <strong>Cinema</strong>
+              <small>Video & voice</small>
             </a>
 
-            <a
-              class="room-card"
-              data-room="archive"
-              href="../archive/index.html"
-            >
-              <span class="room-icon">📝</span>
-              <strong>Archive</strong>
-              <small>56 notes</small>
+            <a class="room-card" data-room="dream" href="../future/index.html">
+              <span class="room-icon">🌸</span>
+              <strong>Future</strong>
+              <small>Wishlist date</small>
             </a>
 
-            <a class="room-card" data-room="music" href="../music/index.html">
-              <span class="room-icon">🎵</span>
-              <strong>Music Corner</strong>
-              <small>18 songs</small>
-            </a>
-
-            <a class="room-card" data-room="map" href="../map/index.html">
+            <a class="room-card" data-room="places" href="../map/index.html">
               <span class="room-icon">🗺</span>
               <strong>Journey Map</strong>
-              <small>12 places</small>
+              <small>Places you went</small>
             </a>
 
-            <a
-              class="room-card"
-              data-room="capsule"
-              href="../capsule/index.html"
-            >
-              <span class="room-icon">⏳</span>
-              <strong>Time Capsule</strong>
-              <small>8 locked letters</small>
+            <a class="room-card" data-room="sound" href="../music/index.html">
+              <span class="room-icon">🎵</span>
+              <strong>Music Corner</strong>
+              <small>Playlist & songs</small>
+            </a>
+
+            <a class="room-card" data-room="insight" href="../statistics/index.html">
+              <span class="room-icon">📊</span>
+              <strong>Insights</strong>
+              <small>Relationship stats</small>
             </a>
           </div>
         </section>
@@ -187,8 +165,8 @@
             <div class="feed-user">
               <div class="feed-avatar avatar-purple">D</div>
               <div>
-                <strong>Dion & Chelsea</strong>
-                <p>Now • Hall of Memories</p>
+                <strong>Day Uno</strong>
+                <p>17 Jun 2026 • Jatiwangi</p>
               </div>
             </div>
 
@@ -200,7 +178,7 @@
             </div>
 
             <p class="feed-text">
-              A random Thursday, but somehow it became a memory worth framing.
+              Hari rame-rame main UNO, yang kalah dicoret-coret, lalu beraniin diri ngajak fotbar.
             </p>
 
             <div class="feed-actions">
@@ -215,8 +193,8 @@
             <div class="feed-user">
               <div class="feed-avatar avatar-pink">C</div>
               <div>
-                <strong>Chelsea wrote</strong>
-                <p>8m ago • A new note</p>
+                <strong>Location note</strong>
+                <p>Jalan Kampung RT 4 RW 2 • Kontrakan pink belakang rumah putih</p>
               </div>
             </div>
 
@@ -224,71 +202,14 @@
               <div class="mini-map-pin"></div>
               <div class="mini-map-pin pin-2"></div>
               <div class="mini-map-pin pin-3"></div>
-              <div class="mini-map-label">Perth, WA</div>
+              <div class="mini-map-label">Jatiwangi</div>
             </div>
           </article>
-        </section>
-
-        <section class="timeline-panel">
-          <div class="section-head">
-            <div>
-              <p class="section-kicker">JOURNEY</p>
-              <h3>Recent timeline</h3>
-            </div>
-            <button class="text-btn" type="button">Open timeline</button>
-          </div>
-
-          <div class="timeline-list">
-            <article class="timeline-item">
-              <div class="timeline-date">
-                <strong>12</strong>
-                <span>Mei</span>
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-thumb thumb-sunset"></div>
-                <div>
-                  <p>Sunset at the beach</p>
-                  <small>Story, photo, location</small>
-                </div>
-              </div>
-              <div class="timeline-like">♡</div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-date">
-                <strong>08</strong>
-                <span>Mei</span>
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-thumb thumb-coffee"></div>
-                <div>
-                  <p>Morning coffee</p>
-                  <small>Note, voice, mood</small>
-                </div>
-              </div>
-              <div class="timeline-like active">▶</div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-date">
-                <strong>04</strong>
-                <span>Mei</span>
-              </div>
-              <div class="timeline-body">
-                <div class="timeline-thumb thumb-ride"></div>
-                <div>
-                  <p>Date at new cafe</p>
-                  <small>Album: Outings</small>
-                </div>
-              </div>
-              <div class="timeline-like">♡</div>
-            </article>
-          </div>
         </section>
       </section>
 
       <nav class="bottom-nav" aria-label="Bottom navigation">
-        <a class="nav-item active" href="../lobby/index.html">
+        <a class="nav-item active" href="./index.html">
           <span>⌂</span>
           <small>Lobby</small>
         </a>
@@ -298,16 +219,16 @@
           <small>Gallery</small>
         </a>
 
-        <button class="nav-fab" type="button" aria-label="Add memory">+</button>
+        <a class="nav-fab" href="../future/index.html" aria-label="Open future memories">+</a>
 
-        <a class="nav-item" href="../archive/index.html">
-          <span>📝</span>
-          <small>Archive</small>
+        <a class="nav-item" href="../cinema/index.html">
+          <span>🎥</span>
+          <small>Cinema</small>
         </a>
 
-        <a class="nav-item" href="../settings/index.html">
-          <span>☰</span>
-          <small>More</small>
+        <a class="nav-item" href="../statistics/index.html">
+          <span>📊</span>
+          <small>Stats</small>
         </a>
       </nav>
     </main>

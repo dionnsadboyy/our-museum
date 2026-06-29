@@ -6,11 +6,13 @@
   button.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const page = document.querySelector(".welcome-page");
-    if (page) page.classList.add("fade-out");
+    MuseumMusic.play();
 
-    window.setTimeout(() => {
-      window.location.href = button.getAttribute("href");
+    const page = document.querySelector(".welcome-page");
+    page?.classList.add("fade-out");
+
+    setTimeout(() => {
+      window.location.href = button.href;
     }, 320);
   });
 })();

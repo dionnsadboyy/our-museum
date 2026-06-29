@@ -293,10 +293,10 @@ button{
 
 .primary-btn{
 
-    flex:1;
-
-    height:52px;
-
+    padding:0 24px;
+    min-width:170px;
+    height:54px;
+    white-space:nowrap;
     border-radius:18px;
 
     display:flex;
@@ -338,28 +338,16 @@ button{
 /* ========================= */
 
 .memory-preview{
-
     position:relative;
-
-    height:220px;
-
-    border-radius:28px;
-
-    background:
-
-    linear-gradient(
-
-        180deg,
-
-        rgba(255,255,255,.70),
-
-        rgba(255,248,242,.92)
-
-    );
-
-    border:1px solid var(--border);
-
+    width:100%;
+    height:170px;
     overflow:hidden;
+
+    border-radius:24px;
+
+    background:#faf8f6;
+
+    border:1px solid rgba(86,60,92,.08);
 }
 
 .memory-photo{
@@ -368,56 +356,58 @@ button{
 
     object-fit:cover;
 
+    border:5px solid #fff;
+
     border-radius:18px;
 
-    border:5px solid white;
+    box-shadow:0 18px 36px rgba(0,0,0,.15);
 
-    box-shadow:
-
-    0 18px 34px rgba(40,30,50,.18);
-
-    transition:.35s;
+    transition:.25s;
 }
 
 .memory-photo-main{
 
-    width:145px;
+    width:112px;
+    height:112px;
 
-    height:145px;
-
-    left:20px;
-
-    top:28px;
+    left:22px;
+    top:22px;
 
     transform:rotate(-10deg);
+
+    object-position:center;
+
+    z-index:1;
 }
 
 .memory-photo-secondary{
 
-    width:135px;
+    width:112px;
+    height:112px;
 
-    height:135px;
+    right:22px;
+    top:22px;
 
-    right:20px;
+    transform:rotate(10deg);
 
-    top:32px;
+    object-position:center;
 
-    transform:rotate(9deg);
+    z-index:2;
 }
 
 .memory-photo-tertiary{
 
-    width:120px;
-
-    height:120px;
+    width:94px;
+    height:94px;
 
     left:50%;
+    bottom:12px;
 
-    bottom:18px;
+    transform:translateX(-50%);
 
-    transform:
-    translateX(-50%)
-    rotate(2deg);
+    object-position:center;
+
+    z-index:3;
 }
 
 .memory-badge{
@@ -425,16 +415,14 @@ button{
     position:absolute;
 
     right:16px;
+    bottom:16px;
 
-    bottom:18px;
+    width:48px;
+    height:48px;
 
-    width:56px;
+    border-radius:16px;
 
-    height:56px;
-
-    border-radius:18px;
-
-    background:white;
+    background:#fff;
 
     display:flex;
 
@@ -442,19 +430,24 @@ button{
 
     justify-content:center;
 
-    font-weight:800;
+    font-weight:700;
 
-    color:var(--purple);
+    color:#5A4165;
 
-    box-shadow:var(--shadow-soft);
+    box-shadow:0 10px 20px rgba(0,0,0,.12);
 
-    z-index:5;
+    z-index:4;
 }
 /* =======================================================
    STORY STRIP
 ======================================================= */
 
-.story-strip,
+.story-strip{
+    background:rgba(255,252,248,.78);
+    border:1px solid rgba(86,60,92,.08);
+    border-radius:30px;
+    padding:20px;
+}
 .rooms-panel,
 .feed-panel{
 
@@ -503,17 +496,9 @@ button{
 }
 
 .section-head{
-
-    position:relative;
-
-    z-index:2;
-
     display:flex;
-
     justify-content:space-between;
-
-    align-items:center;
-
+    align-items:flex-start;
     margin-bottom:18px;
 }
 
@@ -542,16 +527,11 @@ button{
 }
 
 .text-btn{
-
     border:none;
-
     background:none;
-
-    color:var(--purple2);
-
-    font-size:.82rem;
-
+    color:#7b57b2;
     font-weight:700;
+    font-size:.82rem;
 }
 
 /* =======================================================
@@ -559,15 +539,9 @@ button{
 ======================================================= */
 
 .story-row{
-
     display:flex;
-
     gap:14px;
-
     overflow-x:auto;
-
-    padding-bottom:4px;
-
     scrollbar-width:none;
 }
 
@@ -576,80 +550,82 @@ button{
 }
 
 .story-card{
+    position:relative;
 
-    flex:0 0 82px;
+    flex:0 0 88px;
 
-    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 .story-avatar{
+    position:absolute;
 
-    width:22px;
+    top:8px;
+    left:8px;
 
-    height:22px;
+    width:26px;
+    height:26px;
 
     border-radius:50%;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
-    color:white;
+    background:#7B57B2;
+    color:#fff;
 
-    font-size:10px;
-
+    font-size:.7rem;
     font-weight:700;
 
-    margin:auto;
+    border:2px solid #fff;
 
-    transform:translateY(10px);
-
-    z-index:3;
-
-    position:relative;
+    z-index:5;
 }
 
 .avatar-purple{
-
-    background:var(--gradient);
+    background:#7b57b2;
 }
 
 .avatar-pink{
-
-    background:linear-gradient(
-        135deg,
-        #FFAFD4,
-        #FF7FB6
-    );
+    background:#f58dbc;
 }
 
 .story-thumb{
-
-    width:82px;
-
-    height:110px;
-
+    width:84px;
+    height:108px;
     border-radius:22px;
-
-    border:3px solid white;
-
+    overflow:hidden;
+    background:#f3efeb;
+    border:1px solid rgba(86,60,92,.08);
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
     background-size:cover;
-
     background-position:center;
+}
 
-    box-shadow:var(--shadow-soft);
+.story-thumb.thumb-night{
+    background-image:url("/assets/images/day-uno/uno1.jpeg");
+}
+
+.story-thumb.thumb-road{
+    background-image:url("/assets/images/day-uno/uno4.jpeg");
+}
+
+.story-thumb.thumb-leaf{
+    background-image:url("/assets/images/day-uno/uno7.jpeg");
+}
+
+.story-thumb.thumb-flower{
+    background-image:url("/assets/images/day-uno/uno10.jpeg");
 }
 
 .story-card p{
-
-    margin-top:8px;
-
+    margin-top:10px;
     font-size:.76rem;
-
-    color:var(--muted);
-
+    color:#6f6778;
+    text-align:center;
     white-space:nowrap;
 }
 
@@ -837,96 +813,68 @@ button{
 }
 
 .collage{
-
     position:relative;
-
-    height:180px;
-
-    margin-bottom:18px;
+    height:170px;
+    margin:18px 0;
 }
 
-.collage-big,
-.collage-small{
-
+.collage img{
     position:absolute;
-
-    border-radius:20px;
-
-    border:4px solid white;
-
-    background-size:cover;
-
-    background-position:center;
-
-    box-shadow:0 18px 30px rgba(40,30,50,.15);
+    object-fit:cover;
+    border-radius:22px;
+    border:4px solid #fff;
+    box-shadow:0 12px 24px rgba(0,0,0,.12);
 }
 
-.collage-big{
-
+.collage-one{
     width:145px;
-
     height:145px;
-
     left:0;
-
     top:8px;
-
-    transform:rotate(-9deg);
+    transform:rotate(-8deg);
+    z-index:1;
 }
 
 .collage-two{
-
-    width:135px;
-
-    height:135px;
-
-    right:4px;
-
-    top:0;
-
-    transform:rotate(7deg);
+    width:145px;
+    height:145px;
+    right:0;
+    top:8px;
+    transform:rotate(8deg);
+    z-index:2;
 }
 
 .collage-three{
-
-    width:118px;
-
-    height:118px;
-
+    width:110px;
+    height:110px;
     left:50%;
-
     bottom:0;
-
     transform:translateX(-50%);
+    z-index:3;
 }
 
 .collage-more{
-
     position:absolute;
 
-    right:8px;
+    right:6px;
+    bottom:6px;
 
-    bottom:8px;
-
-    width:56px;
-
-    height:56px;
+    width:52px;
+    height:52px;
 
     border-radius:18px;
 
-    background:white;
+    background:#fff;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
-    color:var(--purple);
+    font-weight:700;
 
-    font-weight:800;
+    color:#5A4165;
 
-    box-shadow:var(--shadow-soft);
+    z-index:4;
 }
 
 .feed-text{
@@ -1148,7 +1096,7 @@ button{
 /* =======================================================
    MOBILE
 ======================================================= */
-
+/* 
 @media(max-width:390px){
 
 .hero-copy h2{
@@ -1158,24 +1106,40 @@ font-size:2.6rem;
 }
 
 .memory-photo-main{
+    width:120px;
+    height:120px;
 
-width:130px;
-height:130px;
+    left:12px;
+    top:20px;
 
+    transform:rotate(-10deg);
+
+    z-index:1;
 }
 
 .memory-photo-secondary{
+    width:120px;
+    height:120px;
 
-width:122px;
-height:122px;
+    right:12px;
+    top:20px;
 
+    transform:rotate(8deg);
+
+    z-index:2;
 }
 
 .memory-photo-tertiary{
 
-width:108px;
-height:108px;
+    width:96px;
+    height:96px;
 
+    left:50%;
+    bottom:12px;
+
+    transform:translateX(-50%);
+
+    z-index:3;
 }
 
 .room-grid{
@@ -1184,4 +1148,4 @@ grid-template-columns:1fr;
 
 }
 
-}
+} */

@@ -19,39 +19,52 @@
   };
 
   const renderRandomPreview = () => {
-    const museum = window.OUR_MUSEUM;
     const preview = document.getElementById("memoryPreview");
-    const badge = document.getElementById("memoryBadge");
-
-    if (!museum || !preview) return;
-
-    const pool = museum.gallery.flatMap((album) => {
-      const photos = Array.isArray(album.photos) ? album.photos : [];
-      return [album.cover, ...photos].filter(Boolean);
-    });
-
-    const unique = [...new Set(pool)];
-    const shuffled = unique.sort(() => Math.random() - 0.5);
-    const picks = shuffled.slice(0, 3);
-
-    const fallback = [
-      "/assets/images/day-uno/uno1.jpeg",
-      "/assets/images/day-uno/uno2.jpeg",
-      "/assets/images/day-uno/uno3.jpeg",
-    ];
-
-    const photos = (picks.length ? picks : fallback).slice(0, 3);
-    const count = Math.max(pool.length - 3, 20);
+    if (!preview) return;
 
     preview.innerHTML = `
-      <img class="memory-photo memory-photo-main" src="${photos[0]}" alt="" />
-      <img class="memory-photo memory-photo-secondary" src="${photos[1] || photos[0]}" alt="" />
-      <img class="memory-photo memory-photo-tertiary" src="${photos[2] || photos[0]}" alt="" />
-      <div class="memory-badge" id="memoryBadge">+${count}</div>
-    `;
+    <img
+      class="memory-photo memory-photo-main"
+      src="/assets/images/day-uno/uno2.jpeg"
+      alt=""
+    />
 
-    if (badge) badge.remove();
+    <img
+      class="memory-photo memory-photo-secondary"
+      src="/assets/images/day-uno/uno12.jpeg"
+      alt=""
+    />
+
+    <img
+      class="memory-photo memory-photo-tertiary"
+      src="/assets/images/day-uno/uno4.jpeg"
+      alt=""
+    />
+
+    <div class="memory-badge">+20</div>
+  `;
   };
+
+  function renderStories() {
+    const row = document.getElementById("storyRow");
+    if (!row || !window.gallery) return;
+
+    row.innerHTML = "";
+
+    window.gallery.forEach((album) => {
+      row.innerHTML += `
+      <article class="story-card">
+        <div class="story-avatar avatar-purple">D</div>
+        <div
+          class="story-thumb"
+          style="background-image:url('${album.cover}')">
+        </div>
+
+        <p>${album.title}</p>
+      </article>
+    `;
+    });
+  }
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -82,4 +95,6 @@
   });
 
   renderRandomPreview();
+  renderStories();
+  renderFeedPreview();
 })();

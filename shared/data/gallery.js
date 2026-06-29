@@ -8,7 +8,7 @@
     {
       id: 1,
       folder: "day-uno",
-      title: "Day Uno",
+      title: "Opening Chapter",
       subtitle: "Hari Kedua Kita Kenal",
       cover: "uno1.jpeg",
       date: "17 June 2026",

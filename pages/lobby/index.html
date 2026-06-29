@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -35,14 +35,17 @@
         <section class="hero-card">
           <div class="hero-copy">
             <p class="hero-label">Today Memory</p>
-            <h2>A curated room for your newest memory, your oldest story, and everything in between.</h2>
+            <h2>
+              A curated room for your newest memory, your oldest story, and
+              everything in between.
+            </h2>
             <p class="hero-subtitle">
-              Setiap room dibuat ringan, rapi, dan tetap terasa seperti museum kecil
-              yang kalian rawat berdua.
+              Setiap room dibuat ringan, rapi, dan tetap terasa seperti museum
+              kecil yang kalian rawat berdua.
             </p>
 
             <div class="hero-actions">
-              <a class="primary-btn" href="../gallery/index.html">
+              <a class="primary-btn" href="/pages/gallery/index.html">
                 <span>Continue Journey</span>
                 <i>→</i>
               </a>
@@ -50,11 +53,8 @@
             </div>
           </div>
 
-          <article class="memory-preview" aria-hidden="true">
-            <div class="memory-photo memory-photo-main"></div>
-            <div class="memory-photo memory-photo-secondary"></div>
-            <div class="memory-photo memory-photo-tertiary"></div>
-            <div class="memory-badge">+12</div>
+          <article class="memory-preview" aria-hidden="true" id="memoryPreview">
+            <div class="memory-badge" id="memoryBadge">+20</div>
           </article>
         </section>
 
@@ -104,47 +104,81 @@
           </div>
 
           <div class="filter-tabs" role="tablist" aria-label="Room filters">
-            <button class="tab active" data-filter="all" type="button">All</button>
-            <button class="tab" data-filter="visual" type="button">Gallery</button>
-            <button class="tab" data-filter="motion" type="button">Cinema</button>
-            <button class="tab" data-filter="dream" type="button">Future</button>
+            <button class="tab active" data-filter="all" type="button">
+              All
+            </button>
+            <button class="tab" data-filter="visual" type="button">
+              Gallery
+            </button>
+            <button class="tab" data-filter="motion" type="button">
+              Cinema
+            </button>
+            <button class="tab" data-filter="dream" type="button">
+              Future
+            </button>
             <button class="tab" data-filter="places" type="button">Map</button>
             <button class="tab" data-filter="sound" type="button">Music</button>
-            <button class="tab" data-filter="insight" type="button">Stats</button>
+            <button class="tab" data-filter="insight" type="button">
+              Stats
+            </button>
           </div>
 
           <div class="room-grid">
-            <a class="room-card" data-room="visual" href="../gallery/index.html">
+            <a
+              class="room-card"
+              data-room="visual"
+              href="/pages/gallery/index.html"
+            >
               <span class="room-icon">🖼</span>
               <strong>Gallery</strong>
               <small>Photos & stories</small>
             </a>
 
-            <a class="room-card" data-room="motion" href="../cinema/index.html">
+            <a
+              class="room-card"
+              data-room="motion"
+              href="/pages/cinema/index.html"
+            >
               <span class="room-icon">🎥</span>
               <strong>Cinema</strong>
               <small>Video & voice</small>
             </a>
 
-            <a class="room-card" data-room="dream" href="../future/index.html">
+            <a
+              class="room-card"
+              data-room="dream"
+              href="/pages/future/index.html"
+            >
               <span class="room-icon">🌸</span>
               <strong>Future</strong>
               <small>Wishlist date</small>
             </a>
 
-            <a class="room-card" data-room="places" href="../map/index.html">
+            <a
+              class="room-card"
+              data-room="places"
+              href="/pages/map/index.html"
+            >
               <span class="room-icon">🗺</span>
               <strong>Journey Map</strong>
               <small>Places you went</small>
             </a>
 
-            <a class="room-card" data-room="sound" href="../music/index.html">
+            <a
+              class="room-card"
+              data-room="sound"
+              href="/pages/music/index.html"
+            >
               <span class="room-icon">🎵</span>
               <strong>Music Corner</strong>
               <small>Playlist & songs</small>
             </a>
 
-            <a class="room-card" data-room="insight" href="../statistics/index.html">
+            <a
+              class="room-card"
+              data-room="insight"
+              href="/pages/statistics/index.html"
+            >
               <span class="room-icon">📊</span>
               <strong>Insights</strong>
               <small>Relationship stats</small>
@@ -178,7 +212,8 @@
             </div>
 
             <p class="feed-text">
-              Hari rame-rame main UNO, yang kalah dicoret-coret, lalu beraniin diri ngajak fotbar.
+              Hari rame-rame main UNO, yang kalah dicoret-coret, lalu beraniin
+              diri ngajak fotbar.
             </p>
 
             <div class="feed-actions">
@@ -194,7 +229,9 @@
               <div class="feed-avatar avatar-pink">C</div>
               <div>
                 <strong>Location note</strong>
-                <p>Jalan Kampung RT 4 RW 2 • Kontrakan pink belakang rumah putih</p>
+                <p>
+                  Jalan Kampung RT 4 RW 2 • Kontrakan pink belakang rumah putih
+                </p>
               </div>
             </div>
 
@@ -209,30 +246,36 @@
       </section>
 
       <nav class="bottom-nav" aria-label="Bottom navigation">
-        <a class="nav-item active" href="./index.html">
+        <a class="nav-item active" href="/pages/lobby/index.html">
           <span>⌂</span>
           <small>Lobby</small>
         </a>
 
-        <a class="nav-item" href="../gallery/index.html">
+        <a class="nav-item" href="/pages/gallery/index.html">
           <span>🖼</span>
           <small>Gallery</small>
         </a>
 
-        <a class="nav-fab" href="../future/index.html" aria-label="Open future memories">+</a>
+        <a
+          class="nav-fab"
+          href="/pages/future/index.html"
+          aria-label="Open future memories"
+          >+</a
+        >
 
-        <a class="nav-item" href="../cinema/index.html">
+        <a class="nav-item" href="/pages/cinema/index.html">
           <span>🎥</span>
           <small>Cinema</small>
         </a>
 
-        <a class="nav-item" href="../statistics/index.html">
+        <a class="nav-item" href="/pages/statistics/index.html">
           <span>📊</span>
           <small>Stats</small>
         </a>
       </nav>
     </main>
 
+    <script src="/shared/data/gallery.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

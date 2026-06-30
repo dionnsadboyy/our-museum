@@ -96,5 +96,4 @@
 
   renderRandomPreview();
   renderStories();
-  renderFeedPreview();
 })();

@@ -28,8 +28,13 @@
             </div>
           </div>
 
-          <button class="icon-btn" type="button" aria-label="Notifications">
-            <span>🔔</span>
+          <button
+            class="icon-btn"
+            type="button"
+            aria-label="Music controls"
+            id="musicToggleBtn"
+          >
+            <span>🎵</span>
           </button>
         </header>
 
@@ -259,8 +264,60 @@
         </a>
       </nav>
     </main>
+    <div class="music-backdrop" id="musicBackdrop" hidden></div>
 
+    <section
+      class="music-sheet"
+      id="musicSheet"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Music controls"
+    >
+      <div class="music-sheet__handle" aria-hidden="true"></div>
+
+      <div class="music-sheet__header">
+        <div>
+          <p class="music-kicker">MUSEUM AMBIENCE</p>
+          <h4>Now Playing</h4>
+        </div>
+
+        <button
+          class="music-sheet__close"
+          type="button"
+          id="musicCloseBtn"
+          aria-label="Close music controls"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div class="music-now">
+        <div class="music-art" aria-hidden="true">🏛</div>
+
+        <div class="music-meta">
+          <strong id="musicTitle">museum.mp3</strong>
+          <span id="musicStatus">tap play to start</span>
+        </div>
+      </div>
+
+      <div class="music-progress">
+        <div class="music-progress__track">
+          <div class="music-progress__fill" id="musicProgressFill"></div>
+        </div>
+        <div class="music-time" id="musicTime">0:00 / 0:00</div>
+      </div>
+
+      <div class="music-actions">
+        <button class="music-play" type="button" id="musicPlayBtn">Play</button>
+
+        <label class="music-volume">
+          <span>Vol</span>
+          <input type="range" min="0" max="1" step="0.01" id="musicVolume" />
+        </label>
+      </div>
+    </section>
     <script src="/shared/data/gallery.js"></script>
+    <script src="/shared/js/music.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

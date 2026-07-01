@@ -38,7 +38,7 @@
 
       folder: "day-date",
 
-      title: "Night Around",
+      title: "Date",
 
       subtitle: "Keliling Malam Tanpa Tujuan",
 
@@ -68,6 +68,97 @@
         "date8.jpeg",
         "date9.jpeg",
         "date10.jpeg",
+      ],
+    },
+    {
+      id: 3,
+
+      folder: "jababeka-day",
+
+      title: "Jababeka Day",
+
+      subtitle: "Alasan Buat Ketemu",
+
+      cover: "jababeka1.jpg",
+
+      date: "25 June 2026",
+
+      location: "Jababeka, Cikarang",
+
+      maps: "Jababeka, Cikarang Utara, Bekasi",
+
+      mood: "🛵🍛🤍",
+
+      story:
+        "awalnya cuma bilang mau benerin iphone. padahal sebenernya itu cuma alasan biar bisa ketemu lagi. selesai servis kita muter-muter di jababeka, bingung mau makan apa, sempet mampir ke chiefs, terus akhirnya nyerah dan milih nasi goreng. pulangnya udah lumayan malem, bahkan sempet ada drama karena gue nganter lo sampai sekitar jam sepuluh. sesederhana itu, tapi malah jadi salah satu malam yang paling gue inget.",
+
+      tags: [
+        "Jababeka",
+        "iPhone Service",
+        "Cifest",
+        "Nasi Goreng",
+        "Night Ride",
+      ],
+
+      photos: [
+        "jababeka1.jpg",
+        "jababeka2.jpg",
+        "jababeka3.jpg",
+        "jababeka4.jpg",
+        "jababeka5.jpg",
+        "jababeka6.jpg",
+        "jababeka7.jpg",
+        "jababeka8.jpg",
+        "jababeka9.jpg",
+        "jababeka10.jpg",
+        "jababeka11.jpg",
+        "jababeka12.jpg",
+        "jababeka13.jpg",
+        "jababeka14.jpg",
+      ],
+    },
+
+    {
+      id: 4,
+
+      folder: "012-day",
+
+      title: "012 Day",
+
+      subtitle: "Hari Kedua Belas",
+
+      cover: "012-1.jpg",
+
+      date: "29 June 2026",
+
+      location: "Jatiwangi, Cikarang Barat",
+
+      maps: "Jatiwangi, Cikarang Barat, Bekasi",
+
+      mood: "🍦🐈🤍",
+
+      story:
+        "hari itu sebenernya lo lagi nggak baik-baik aja. habis diomongin macem-macem sama masa lalu, sampai sempet nangis juga di tempat kerja. aku nggak bisa ngelakuin banyak hal, jadi yang kepikiran cuma ngajak lo muter bentar habis pulang kerja. kita keliling cikarang barat tanpa tujuan, berhenti di alfamart jatiwangi, beli es krim, duduk sebentar, ngasih makan kucing, terus pulang. nggak ada yang mewah, tapi ngeliat lo bisa ketawa lagi malam itu rasanya udah lebih dari cukup.",
+
+      tags: [
+        "Day 12",
+        "Night Ride",
+        "Ice Cream",
+        "Jatiwangi",
+        "Cat",
+        "Healing",
+      ],
+
+      photos: [
+        "012-1.jpg",
+        "012-2.jpg",
+        "012-3.jpg",
+        "012-4.jpg",
+        "012-5.jpg",
+        "012-6.jpg",
+        "012-7.jpg",
+        "012-8.jpg",
+        "012-9.jpg",
       ],
     },
   ];

@@ -16,198 +16,134 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <main class="page">
-      <header class="topbar">
-        <a
-          class="back-btn"
-          href="../album/index.html"
-          aria-label="Back to albums"
-          >←</a
-        >
+    <script src="/shared/js/music.js"></script>
 
-        <div class="title-wrap">
+    <main class="detail-page">
+      <header class="topbar">
+        <a class="back-btn" href="../index.html" aria-label="Back"> ← </a>
+
+        <div class="topbar-copy">
           <p class="eyebrow">OUR MUSEUM</p>
           <h1>Photo Detail</h1>
         </div>
 
-        <button class="icon-btn" type="button" aria-label="More options">
-          ⋯
+        <button
+          class="icon-btn"
+          type="button"
+          aria-label="Share photo"
+          id="shareBtn"
+        >
+          ↗
         </button>
       </header>
 
-      <section class="hero-card">
-        <div class="hero-media" id="heroMedia">
-          <div class="media-overlay"></div>
-          <div class="media-badge">Featured Memory</div>
-          <div class="media-frame frame-a"></div>
-          <div class="media-frame frame-b"></div>
-          <div class="media-frame frame-c"></div>
+      <section class="photo-stage" id="photoStage" aria-label="Featured photo">
+        <div class="stage-glow"></div>
+
+        <div class="stage-overlay">
+          <span class="stage-pill" id="albumPill">Opening Chapter</span>
+          <span class="stage-pill stage-pill-soft" id="photoCounter"
+            >1 / 12</span
+          >
         </div>
 
-        <div class="hero-copy">
-          <p class="photo-type">Romantic • Warm</p>
-          <h2 id="photoTitle">First Coffee at the Quiet Cafe</h2>
-          <p class="photo-subtitle" id="photoSubtitle">
-            Momen kecil yang ternyata jadi salah satu pintu paling hangat dalam
-            museum ini.
-          </p>
-
-          <div class="meta-row">
-            <span>📅 12 Mei 2026</span>
-            <span>•</span>
-            <span>📍 Jababeka</span>
-            <span>•</span>
-            <span>❤️ Happy</span>
-          </div>
-
-          <div class="action-row">
-            <button class="primary-btn" type="button">Open Story</button>
-            <button class="ghost-btn" type="button">Share Memory</button>
-          </div>
-        </div>
+        <img
+          id="heroPhoto"
+          class="hero-photo"
+          src=""
+          alt="Featured memory"
+          loading="eager"
+          decoding="async"
+        />
       </section>
 
-      <section class="panel">
-        <div class="section-head">
+      <section class="action-dock" aria-label="Photo actions">
+        <button
+          class="dock-btn"
+          type="button"
+          id="prevBtn"
+          aria-label="Previous photo"
+        >
+          ‹
+        </button>
+
+        <button
+          class="dock-btn dock-btn-primary"
+          type="button"
+          id="infoBtn"
+          aria-label="Open info"
+        >
+          Info
+        </button>
+
+        <button
+          class="dock-btn"
+          type="button"
+          id="shareBtn2"
+          aria-label="Share photo"
+        >
+          ↗
+        </button>
+
+        <button
+          class="dock-btn"
+          type="button"
+          id="nextBtn"
+          aria-label="Next photo"
+        >
+          ›
+        </button>
+      </section>
+
+      <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+
+      <section
+        class="info-sheet"
+        id="infoSheet"
+        aria-hidden="true"
+        aria-label="Photo information"
+      >
+        <div class="sheet-handle" aria-hidden="true"></div>
+
+        <div class="sheet-head">
           <div>
-            <p class="section-kicker">MASONRY</p>
-            <h3>Other photos in this memory</h3>
+            <p class="sheet-kicker" id="sheetAlbum">Memory</p>
+            <h2 id="sheetTitle">Choose a memory</h2>
           </div>
-          <span class="tiny-note">Swipe and tap</span>
-        </div>
-
-        <div class="thumb-strip">
-          <button
-            class="thumb active"
-            type="button"
-            data-title="First Coffee at the Quiet Cafe"
-            data-subtitle="Momen kecil yang ternyata jadi salah satu pintu paling hangat dalam museum ini."
-            data-tag="Romantic • Warm"
-            data-date="12 Mei 2026"
-            data-location="Jababeka"
-            data-mood="Happy"
-            data-theme="theme-coffee"
-          >
-            <span class="thumb-preview preview-a"></span>
-            <strong>Coffee</strong>
-          </button>
 
           <button
-            class="thumb"
+            class="sheet-close"
             type="button"
-            data-title="Mirror Smile in the Pink Room"
-            data-subtitle="Foto sederhana, tapi ada rasa lembut yang selalu balik lagi saat dibuka."
-            data-tag="Soft • Pastel"
-            data-date="06 Mei 2026"
-            data-location="Home"
-            data-mood="Romantic"
-            data-theme="theme-pink"
+            id="closeSheetBtn"
+            aria-label="Close info"
           >
-            <span class="thumb-preview preview-b"></span>
-            <strong>Mirror</strong>
-          </button>
-
-          <button
-            class="thumb"
-            type="button"
-            data-title="Night Ride After Rain"
-            data-subtitle="Lampu jalan, udara dingin, dan perjalanan yang bikin suasana jadi tenang."
-            data-tag="Night • Calm"
-            data-date="04 Mei 2026"
-            data-location="Cikarang"
-            data-mood="Calm"
-            data-theme="theme-night"
-          >
-            <span class="thumb-preview preview-c"></span>
-            <strong>Ride</strong>
-          </button>
-
-          <button
-            class="thumb"
-            type="button"
-            data-title="Little Laugh on a Random Day"
-            data-subtitle="Candid kecil yang justru paling jujur. Museum ini suka momen kayak gini."
-            data-tag="Candid • Real"
-            data-date="28 Apr 2026"
-            data-location="Cafe Stop"
-            data-mood="Funny"
-            data-theme="theme-candid"
-          >
-            <span class="thumb-preview preview-d"></span>
-            <strong>Laugh</strong>
+            ✕
           </button>
         </div>
+
+        <p class="sheet-story" id="sheetStory">
+          Pilih foto di atas untuk melihat cerita di balik memory ini.
+        </p>
+
+        <div class="sheet-meta" id="sheetMeta"></div>
+
+        <div class="sheet-tags" id="sheetTags"></div>
+
+        <a
+          class="sheet-map"
+          id="sheetMap"
+          href="#"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open location
+        </a>
       </section>
 
-      <section class="panel story-panel">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">STORY BEHIND PHOTO</p>
-            <h3>Plakat kenangan</h3>
-          </div>
-        </div>
-
-        <article class="story-card">
-          <div class="story-header">
-            <div>
-              <p class="story-label" id="storyTag">Romantic • Warm</p>
-              <h4 id="storyTitle">First Coffee at the Quiet Cafe</h4>
-            </div>
-            <div class="story-dot"></div>
-          </div>
-
-          <p class="story-text" id="storyText">
-            Awalnya cuma niat ngopi sebentar. Tapi justru dari momen santai
-            kayak gini, akhirnya obrolan jadi lebih panjang, lebih jujur, dan
-            lebih dekat. Foto ini jadi salah satu bukti kalau hal kecil bisa
-            jadi kenangan yang paling sering dibuka lagi.
-          </p>
-
-          <div class="story-meta">
-            <div class="story-chip">
-              <span>📅</span>
-              <small id="storyDate">12 Mei 2026</small>
-            </div>
-            <div class="story-chip">
-              <span>📍</span>
-              <small id="storyLocation">Jababeka</small>
-            </div>
-            <div class="story-chip">
-              <span>💗</span>
-              <small id="storyMood">Happy</small>
-            </div>
-          </div>
-
-          <div class="story-actions">
-            <button class="mini-btn active" type="button">Read</button>
-            <button class="mini-btn" type="button">Notes</button>
-            <button class="mini-btn" type="button">Map</button>
-            <button class="mini-btn" type="button">Next →</button>
-          </div>
-        </article>
-      </section>
-
-      <nav class="bottom-nav" aria-label="Bottom navigation">
-        <a class="nav-item" href="../../lobby/index.html">
-          <span>⌂</span>
-          <small>Lobby</small>
-        </a>
-        <a class="nav-item active" href="../index.html">
-          <span>🖼</span>
-          <small>Gallery</small>
-        </a>
-        <button class="nav-fab" type="button" aria-label="Add memory">+</button>
-        <a class="nav-item" href="../../timeline/index.html">
-          <span>📅</span>
-          <small>Timeline</small>
-        </a>
-        <a class="nav-item" href="../../archive/index.html">
-          <span>📝</span>
-          <small>Archive</small>
-        </a>
-      </nav>
+      <div class="toast" id="toast" hidden></div>
     </main>
 
+    <script src="/shared/data/gallery.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

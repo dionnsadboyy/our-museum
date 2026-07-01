@@ -277,8 +277,6 @@ button {
   columns: 2;
   column-gap: 10px;
   margin-top: 8px;
-  content-visibility: auto;
-  contain-intrinsic-size: 1000px;
 }
 
 .photo-tile {
@@ -292,8 +290,6 @@ button {
   border: 1px solid rgba(110, 74, 145, 0.10);
   background: rgba(255, 255, 255, 0.6);
   transform: translateZ(0);
-  content-visibility: auto;
-  contain-intrinsic-size: 260px;
 }
 
 .photo-tile img {

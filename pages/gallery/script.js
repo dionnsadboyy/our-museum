@@ -43,7 +43,9 @@
 
   const buildDetailHref = (album, photoIndex = 0) => {
     const id = album?.id ?? album?.folder ?? "";
-    return `./detail/index.html?album=${encodeURIComponent(id)}&photo=${encodeURIComponent(photoIndex)}`;
+    return `./detail/index.html?album=${encodeURIComponent(id)}&photo=${encodeURIComponent(
+      photoIndex,
+    )}`;
   };
 
   const getAllPhotos = () =>
@@ -78,32 +80,40 @@
     return [...new Set(candidates)].filter(Boolean);
   };
 
-  const createPhotoImg = (src, alt = "") => {
+  const createPhotoTile = (item, index) => {
+    const label = item.album?.title || "Memory";
+    const href = buildDetailHref(item.album, item.index || 0);
+
+    const tile = document.createElement("a");
+    tile.className = `photo-tile ${tileClasses[index % tileClasses.length]}`;
+    tile.href = href;
+    tile.setAttribute("aria-label", label);
+
     const img = document.createElement("img");
-    img.alt = alt;
-    img.loading = "lazy";
+    img.alt = label;
+    img.loading = index < 8 ? "eager" : "lazy";
     img.decoding = "async";
     img.src = PLACEHOLDER_IMAGE;
 
-    const candidates = makeSrcCandidates(src);
-    let index = 0;
+    const candidates = makeSrcCandidates(item.src);
+    let pointer = 0;
 
-    const next = () => {
-      const candidate = candidates[index++];
-      if (candidate) {
-        img.src = candidate;
-      } else {
-        img.src = PLACEHOLDER_IMAGE;
-      }
+    const loadNext = () => {
+      const next = candidates[pointer++];
+      img.src = next || PLACEHOLDER_IMAGE;
     };
 
     img.addEventListener("error", () => {
-      next();
+      if (pointer < candidates.length) {
+        loadNext();
+      } else {
+        img.src = PLACEHOLDER_IMAGE;
+      }
     });
 
-    img.dataset.srcReady = "0";
-    img.dataset.realSrc = candidates[0] || PLACEHOLDER_IMAGE;
-    return img;
+    loadNext();
+    tile.appendChild(img);
+    return tile;
   };
 
   const renderWall = () => {
@@ -120,44 +130,25 @@
 
     photoWall.innerHTML = "";
 
-    const frag = document.createDocumentFragment();
+    const batchSize = 8;
+    let cursor = 0;
 
-    list.slice(0, 24).forEach((item, index) => {
-      const label = item.album?.title || "Memory";
-      const href = buildDetailHref(item.album, item.index || 0);
+    const appendBatch = () => {
+      const frag = document.createDocumentFragment();
+      const end = Math.min(cursor + batchSize, list.length);
 
-      const tile = document.createElement("a");
-      tile.className = `photo-tile ${tileClasses[index % tileClasses.length]}`;
-      tile.href = href;
-      tile.setAttribute("aria-label", label);
+      for (; cursor < end; cursor++) {
+        frag.appendChild(createPhotoTile(list[cursor], cursor));
+      }
 
-      const img = createPhotoImg(item.src, label);
-      tile.appendChild(img);
-      frag.appendChild(tile);
-    });
+      photoWall.appendChild(frag);
 
-    photoWall.appendChild(frag);
+      if (cursor < list.length) {
+        requestAnimationFrame(appendBatch);
+      }
+    };
 
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-
-          const img = entry.target;
-          const realSrc = img.dataset.realSrc;
-
-          if (realSrc && img.src !== realSrc) {
-            img.src = realSrc;
-          }
-
-          img.dataset.srcReady = "1";
-          obs.unobserve(img);
-        });
-      },
-      { root: null, rootMargin: "300px 0px", threshold: 0.01 },
-    );
-
-    photoWall.querySelectorAll("img").forEach((img) => observer.observe(img));
+    appendBatch();
   };
 
   browseBtn?.addEventListener("click", () => {

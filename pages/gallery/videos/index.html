@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="id" data-view="photos">
+<html lang="id" data-view="videos">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Museum | Gallery</title>
+    <title>Our Museum | Videos</title>
     <meta name="theme-color" content="#F7F4F1" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,23 +13,20 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
-  <body data-view="photos">
+  <body data-view="videos">
     <script src="/shared/js/music.js"></script>
 
     <main class="gallery-page">
       <header class="topbar">
-        <a
-          class="back-btn"
-          href="../lobby/index.html"
-          aria-label="Back to lobby"
+        <a class="back-btn" href="../index.html" aria-label="Back to gallery"
           >←</a
         >
 
         <div class="topbar-copy">
           <p class="eyebrow">OUR MUSEUM</p>
-          <h1>Gallery Room</h1>
+          <h1>Video Room</h1>
         </div>
 
         <button
@@ -44,18 +41,21 @@
 
       <section class="intro">
         <div>
-          <p class="hero-kicker">Collection of memories</p>
-          <h2>Setiap foto punya cerita.</h2>
+          <p class="hero-kicker">Moving memories</p>
+          <h2>Video dulu, cerita belakangan.</h2>
         </div>
 
         <div class="view-switch" aria-label="Gallery views">
-          <button class="view-pill active" type="button" data-view="photos">
-            Photos
-          </button>
-          <a class="view-pill" href="./videos/index.html" data-view="videos"
-            >Videos</a
+          <a class="view-pill" href="../index.html" data-view="photos"
+            >Photos</a
           >
-          <a class="view-pill" href="./album/index.html" data-view="collections"
+          <button class="view-pill active" type="button" data-view="videos">
+            Videos
+          </button>
+          <a
+            class="view-pill"
+            href="../album/index.html"
+            data-view="collections"
             >Collections</a
           >
         </div>
@@ -64,31 +64,31 @@
       <section
         class="media-wall"
         id="mediaWall"
-        aria-label="Photo wall"
+        aria-label="Video wall"
       ></section>
 
       <nav class="bottom-nav" aria-label="Bottom navigation">
-        <a class="nav-item" href="../lobby/index.html">
+        <a class="nav-item" href="../../lobby/index.html">
           <span>⌂</span>
           <small>Lobby</small>
         </a>
 
-        <a class="nav-item active" href="./index.html">
+        <a class="nav-item" href="../index.html">
           <span>🖼</span>
           <small>Gallery</small>
         </a>
 
-        <a class="nav-item" href="./videos/index.html">
+        <a class="nav-item active" href="./index.html">
           <span>▶</span>
           <small>Videos</small>
         </a>
 
-        <a class="nav-item" href="./album/index.html">
+        <a class="nav-item" href="../album/index.html">
           <span>▦</span>
           <small>Collections</small>
         </a>
 
-        <a class="nav-item" href="../statistics/index.html">
+        <a class="nav-item" href="../../statistics/index.html">
           <span>📊</span>
           <small>Stats</small>
         </a>
@@ -147,6 +147,6 @@
     </section>
 
     <script src="/shared/data/gallery.js"></script>
-    <script src="./script.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>

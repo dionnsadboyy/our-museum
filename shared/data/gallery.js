@@ -16,7 +16,7 @@
       maps: "Jalan Kampung RT 4 RW 2, Desa Jatiwangi, Kontrakan Warna Pink, Belakang Rumah Putih, Kontrakan No.21",
       mood: "🥹❤️",
       story:
-        "Hari kedua setelah kita kenal. Awalnya kumpul rame-rame bertujuh buat main UNO. Yang kalah harus dicoret-coret mukanya. Di hari itu akhirnya aku memberanikan diri ngajak foto bareng. Walaupun sederhana, ternyata dari momen kecil itu semuanya mulai terasa berbeda.",
+        "hari kedua setelah kita kenal, kita kumpul rame-rame buat main uno bertujuh. yang kalah mukanya dicoret-coret pake spidol, jadi suasananya rame banget. sebenernya di hari itu nggak ada yang terlalu besar, tapi entah kenapa aku berani ngajak kamu foto bareng. dari momen yang keliatannya biasa aja itu, semuanya mulai kerasa beda buat aku.",
       tags: ["UNO", "Random", "Friends", "First Photo"],
       photos: [
         "uno1.jpeg",
@@ -35,28 +35,17 @@
     },
     {
       id: 2,
-
       folder: "day-date",
-
       title: "Date",
-
       subtitle: "Keliling Malam Tanpa Tujuan",
-
       cover: "date1.jpeg",
-
       date: "22 June 2026",
-
       location: "Central Park Meikarta",
-
       maps: "Central Park Meikarta, Cikarang Selatan, Bekasi",
-
       mood: "🌃🤍",
-
       story:
-        "berawal dari kepikiran habis pulang kerja buat keluar bentar. nggak ada rencana apa-apa, cuma pengen keliling. yang nggak gue sangka, lo malah dandan hampir dua jam, sampai nyatok segala. akhirnya kita cuma ke indomaret beli jajan, terus duduk di pinggir danau dekat jembatan central park meikarta. ngobrol random, ngelihatin air, sesederhana itu. tapi entah kenapa, malam itu rasanya nyaman banget.",
-
+        "awalnya cuma kepikiran buat keluar bentar habis pulang kerja, nggak ada rencana apa-apa, cuma pengen muter aja. yang nggak aku sangka, kamu malah dandan hampir dua jam sampai nyatok segala. akhirnya kita cuma ke indomaret beli jajan, terus duduk di pinggir danau dekat jembatan central park meikarta. ngobrol random, ngelihatin air, sesederhana itu. tapi anehnya malam itu rasanya nyaman banget buat aku.",
       tags: ["Night Ride", "Meikarta", "Lake", "Random Talk"],
-
       photos: [
         "date1.jpeg",
         "date2.jpeg",
@@ -72,26 +61,16 @@
     },
     {
       id: 3,
-
       folder: "jababeka-day",
-
       title: "Jababeka Day",
-
       subtitle: "Alasan Buat Ketemu",
-
       cover: "jababeka1.jpg",
-
       date: "25 June 2026",
-
       location: "Jababeka, Cikarang",
-
       maps: "Jababeka, Cikarang Utara, Bekasi",
-
       mood: "🛵🍛🤍",
-
       story:
-        "awalnya cuma bilang mau benerin iphone. padahal sebenernya itu cuma alasan biar bisa ketemu lagi. selesai servis kita muter-muter di jababeka, bingung mau makan apa, sempet mampir ke chiefs, terus akhirnya nyerah dan milih nasi goreng. pulangnya udah lumayan malem, bahkan sempet ada drama karena gue nganter lo sampai sekitar jam sepuluh. sesederhana itu, tapi malah jadi salah satu malam yang paling gue inget.",
-
+        "awalnya cuma bilang mau benerin iphone, padahal sebenernya itu cuma alasan biar bisa ketemu lagi. selesai servis, kita muter-muter di jababeka, bingung mau makan apa, sempet mampir ke chiefs, terus akhirnya nyerah dan milih nasi goreng. pulangnya udah lumayan malem, bahkan sempet ada drama karena aku nganter kamu sampai sekitar jam sepuluh. sesimpel itu, tapi malah jadi salah satu malam yang paling aku inget.",
       tags: [
         "Jababeka",
         "iPhone Service",
@@ -99,7 +78,6 @@
         "Nasi Goreng",
         "Night Ride",
       ],
-
       photos: [
         "jababeka1.jpg",
         "jababeka2.jpg",
@@ -117,29 +95,18 @@
         "jababeka14.jpg",
       ],
     },
-
     {
       id: 4,
-
       folder: "012-day",
-
       title: "012 Day",
-
       subtitle: "Hari Kedua Belas",
-
       cover: "012-1.jpg",
-
       date: "29 June 2026",
-
       location: "Jatiwangi, Cikarang Barat",
-
       maps: "Jatiwangi, Cikarang Barat, Bekasi",
-
       mood: "🍦🐈🤍",
-
       story:
-        "hari itu sebenernya lo lagi nggak baik-baik aja. habis diomongin macem-macem sama masa lalu, sampai sempet nangis juga di tempat kerja. aku nggak bisa ngelakuin banyak hal, jadi yang kepikiran cuma ngajak lo muter bentar habis pulang kerja. kita keliling cikarang barat tanpa tujuan, berhenti di alfamart jatiwangi, beli es krim, duduk sebentar, ngasih makan kucing, terus pulang. nggak ada yang mewah, tapi ngeliat lo bisa ketawa lagi malam itu rasanya udah lebih dari cukup.",
-
+        "hari itu kamu sebenernya lagi nggak baik-baik aja. habis diomongin macem-macem sama masa lalu, sampai sempet nangis juga di tempat kerja. aku nggak bisa ngelakuin banyak hal, jadi yang kepikiran cuma ngajak kamu muter bentar habis pulang kerja. kita keliling cikarang barat tanpa tujuan, berhenti di alfamart jatiwangi, beli es krim, duduk sebentar, ngasih makan kucing, terus pulang. nggak ada yang mewah, tapi ngeliat kamu bisa ketawa lagi malam itu rasanya udah lebih dari cukup buat aku.",
       tags: [
         "Day 12",
         "Night Ride",
@@ -148,7 +115,6 @@
         "Cat",
         "Healing",
       ],
-
       photos: [
         "012-1.jpg",
         "012-2.jpg",
@@ -160,6 +126,21 @@
         "012-8.jpg",
         "012-9.jpg",
       ],
+    },
+    {
+      id: 5,
+      folder: "014-day",
+      title: "014 Day",
+      subtitle: "Kebab Before Work",
+      cover: "014-day1.jpg",
+      date: "1 July 2026",
+      location: "Cibarengkok, Jatiwangi",
+      maps: "Cibarengkok, Jatiwangi, Cikarang Barat, Bekasi",
+      mood: "🥙🥤📺🤍",
+      story:
+        "hari itu waktunya mepet banget. kamu baru pulang shift pagi, sementara aku bentar lagi masuk shift malem. di sela waktu satu dua jam itu kita mutusin buat keluar sebentar. beli kebab, beli smoothies, terus balik lagi ke kos. makannya sambil nonton upin ipin, ngobrol ngalor ngidul, ketawa-ketawa nggak jelas. cuma beberapa jam, tapi rasanya cukup buat bikin capek satu hari hilang.",
+      tags: ["Day 14", "Kebab", "Smoothies", "Kos", "Upin Ipin", "Before Work"],
+      photos: ["014-day1.jpg", "014-day2.jpg", "014-day3.jpg"],
     },
   ];
 

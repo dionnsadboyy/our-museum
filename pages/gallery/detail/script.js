@@ -28,6 +28,8 @@
   const sheetMap = document.getElementById("sheetMap");
   const toast = document.getElementById("toast");
 
+  const mediaType = query.get("media") === "video" ? "video" : "photo";
+
   const PLACEHOLDER_IMAGE =
     "data:image/svg+xml;charset=UTF-8," +
     encodeURIComponent(`
@@ -68,15 +70,19 @@
   const activeAlbum =
     albumById(query.get("album")) || (gallery.length ? gallery[0] : null);
 
-  const photoList = activeAlbum
-    ? Array.isArray(activeAlbum.photos) && activeAlbum.photos.length
-      ? activeAlbum.photos
-      : [activeAlbum.cover].filter(Boolean)
+  const mediaList = activeAlbum
+    ? mediaType === "video"
+      ? Array.isArray(activeAlbum.videos) && activeAlbum.videos.length
+        ? activeAlbum.videos
+        : []
+      : Array.isArray(activeAlbum.photos) && activeAlbum.photos.length
+        ? activeAlbum.photos
+        : [activeAlbum.cover].filter(Boolean)
     : [];
 
   let activeIndex = Math.max(0, Number(query.get("photo") || 0));
-  if (photoList.length) {
-    activeIndex = Math.min(activeIndex, photoList.length - 1);
+  if (mediaList.length) {
+    activeIndex = Math.min(activeIndex, mediaList.length - 1);
   } else {
     activeIndex = 0;
   }
@@ -91,13 +97,12 @@
     return bits;
   };
 
-  const getPhotoCandidates = (src) => {
+  const getCandidates = (src) => {
     const clean = String(src || "")
       .trim()
       .split("?")[0]
       .split("#")[0];
     const candidates = [];
-
     if (clean) candidates.push(clean);
 
     if (/\.jpg$/i.test(clean)) {
@@ -152,11 +157,6 @@
     }
   };
 
-  const toggleSheet = () => {
-    if (sheetOpen) closeSheet();
-    else openSheet();
-  };
-
   const updateInfo = () => {
     if (!activeAlbum) {
       albumPill.textContent = "No memory";
@@ -178,7 +178,7 @@
     const metaBits = formatMetaBits(activeAlbum);
 
     albumPill.textContent = title;
-    photoCounter.textContent = `${activeIndex + 1} / ${Math.max(photoList.length, 1)}`;
+    photoCounter.textContent = `${activeIndex + 1} / ${Math.max(mediaList.length, 1)}`;
 
     sheetAlbum.textContent = subtitle;
     sheetTitle.textContent = title;
@@ -194,76 +194,107 @@
 
     if (activeAlbum.maps) {
       sheetMap.textContent = "Open location";
-      sheetMap.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-        activeAlbum.maps,
-      )}`;
+      sheetMap.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activeAlbum.maps)}`;
     } else {
       sheetMap.textContent = "No location";
       sheetMap.href = "#";
     }
   };
 
-  const setHeroPhoto = (src) => {
-    if (!heroPhoto) return;
+  const setHeroMedia = (src) => {
+    if (!photoStage) return;
 
-    const candidates = getPhotoCandidates(src);
-    let index = 0;
+    photoStage.innerHTML = `
+      <div class="stage-glow"></div>
+      <div class="stage-overlay">
+        <span class="stage-pill" id="albumPill">${activeAlbum?.title || "Memory"}</span>
+        <span class="stage-pill stage-pill-soft" id="photoCounter">1 / 1</span>
+      </div>
+    `;
 
-    heroPhoto.classList.add("is-loading");
-    heroPhoto.removeAttribute("src");
+    const labelNode = photoStage.querySelector("#albumPill");
+    const counterNode = photoStage.querySelector("#photoCounter");
 
-    const tryLoad = () => {
-      const next = candidates[index];
-      index += 1;
+    if (mediaType === "video") {
+      const video = document.createElement("video");
+      video.className = "hero-photo";
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+      video.src = src || PLACEHOLDER_IMAGE;
 
-      if (next) {
-        heroPhoto.src = next;
-      } else {
-        heroPhoto.src = PLACEHOLDER_IMAGE;
-      }
+      video.onerror = () => {
+        video.src = PLACEHOLDER_IMAGE;
+      };
+
+      photoStage.appendChild(video);
+
+      if (labelNode) labelNode.textContent = activeAlbum?.title || "Memory";
+      if (counterNode)
+        counterNode.textContent = `${activeIndex + 1} / ${Math.max(mediaList.length, 1)}`;
+      return;
+    }
+
+    const img = document.createElement("img");
+    img.id = "heroPhoto";
+    img.className = "hero-photo";
+    img.alt = "Featured memory";
+    img.loading = "eager";
+    img.decoding = "async";
+
+    const candidates = getCandidates(src);
+    let pointer = 0;
+
+    const next = () => {
+      const candidate = candidates[pointer++];
+      img.src = candidate || PLACEHOLDER_IMAGE;
     };
 
-    heroPhoto.onerror = () => {
-      if (index < candidates.length) {
-        tryLoad();
-      } else {
-        heroPhoto.src = PLACEHOLDER_IMAGE;
-      }
+    img.onerror = () => {
+      if (pointer < candidates.length) next();
+      else img.src = PLACEHOLDER_IMAGE;
     };
 
-    heroPhoto.onload = () => {
-      heroPhoto.classList.remove("is-loading");
-    };
+    next();
+    photoStage.appendChild(img);
 
-    tryLoad();
+    if (labelNode) labelNode.textContent = activeAlbum?.title || "Memory";
+    if (counterNode)
+      counterNode.textContent = `${activeIndex + 1} / ${Math.max(mediaList.length, 1)}`;
   };
 
-  const renderPhoto = () => {
-    if (!activeAlbum || !photoList.length) {
-      setHeroPhoto(PLACEHOLDER_IMAGE);
+  const renderMedia = () => {
+    if (!activeAlbum) {
+      setHeroMedia(PLACEHOLDER_IMAGE);
       updateInfo();
       return;
     }
 
-    const src =
-      photoList[activeIndex] ||
-      photoList[0] ||
-      activeAlbum.cover ||
-      PLACEHOLDER_IMAGE;
-    setHeroPhoto(src);
+    if (!mediaList.length) {
+      setHeroMedia(PLACEHOLDER_IMAGE);
+      updateInfo();
+      return;
+    }
+
+    setHeroMedia(
+      mediaList[activeIndex] ||
+        mediaList[0] ||
+        activeAlbum.cover ||
+        PLACEHOLDER_IMAGE,
+    );
     updateInfo();
   };
 
-  const nextPhoto = () => {
-    if (!photoList.length) return;
-    activeIndex = (activeIndex + 1) % photoList.length;
-    renderPhoto();
+  const nextMedia = () => {
+    if (!mediaList.length) return;
+    activeIndex = (activeIndex + 1) % mediaList.length;
+    renderMedia();
   };
 
-  const prevPhoto = () => {
-    if (!photoList.length) return;
-    activeIndex = (activeIndex - 1 + photoList.length) % photoList.length;
-    renderPhoto();
+  const prevMedia = () => {
+    if (!mediaList.length) return;
+    activeIndex = (activeIndex - 1 + mediaList.length) % mediaList.length;
+    renderMedia();
   };
 
   const shareMemory = async () => {
@@ -308,13 +339,13 @@
   infoBtn?.addEventListener("click", openSheet);
   closeSheetBtn?.addEventListener("click", closeSheet);
   sheetBackdrop?.addEventListener("click", closeSheet);
-  prevBtn?.addEventListener("click", prevPhoto);
-  nextBtn?.addEventListener("click", nextPhoto);
+  prevBtn?.addEventListener("click", prevMedia);
+  nextBtn?.addEventListener("click", nextMedia);
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeSheet();
-    if (event.key === "ArrowLeft") prevPhoto();
-    if (event.key === "ArrowRight") nextPhoto();
+    if (event.key === "ArrowLeft") prevMedia();
+    if (event.key === "ArrowRight") nextMedia();
     if (event.key === "ArrowUp") openSheet();
   });
 
@@ -326,7 +357,6 @@
       stageStart = {
         x: event.clientX,
         y: event.clientY,
-        time: Date.now(),
       };
       photoStage.setPointerCapture?.(event.pointerId);
     },
@@ -342,8 +372,8 @@
       const dy = event.clientY - stageStart.y;
 
       if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) {
-        if (dx < 0) nextPhoto();
-        else prevPhoto();
+        if (dx < 0) nextMedia();
+        else prevMedia();
       } else if (dy < -70) {
         openSheet();
       } else if (dy > 70 && sheetOpen) {
@@ -388,10 +418,10 @@
 
   if (!activeAlbum) {
     albumPill.textContent = "No memory";
-    setHeroPhoto(PLACEHOLDER_IMAGE);
+    setHeroMedia(PLACEHOLDER_IMAGE);
     updateInfo();
     return;
   }
 
-  renderPhoto();
+  renderMedia();
 })();
